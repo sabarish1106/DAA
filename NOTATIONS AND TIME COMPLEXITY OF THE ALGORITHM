@@ -1,17 +1,27 @@
 #include <stdio.h>
-int main() {
-    int n = 10;
+
+void exampleAlgorithm1(int n) {
     for (int i = 0; i < n; i++) {
-        printf("Hello, World!\n");
+        printf("Example Algorithm 1\n");
     }
-    int m = 5;
-    for (int j = 0; j < m; j++) {
-        printf("Welcome to C Programming!\n");
+}
+
+void exampleAlgorithm2(int n) {
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("Example Algorithm 2\n");
+        }
     }
-    int k = 8;
-    for (int l = 0; l < k; l++) {
-        printf("This is a Theta Notation example.\n");
-    }
+}
+
+int main() {
+    int inputSize = 5;
+
+    // Example Algorithm 1
+    exampleAlgorithm1(inputSize);
+
+    // Example Algorithm 2
+    exampleAlgorithm2(inputSize);
 
     return 0;
 }
