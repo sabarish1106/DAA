@@ -1,0 +1,7 @@
+numbers = [3, 7, 1, 9, 4, 6]
+
+for num in numbers:
+    print(f"Number: {num}")
+    print(f"Minimum: {min(numbers)}")
+    print(f"Maximum: {max(numbers)}")
+    print()
