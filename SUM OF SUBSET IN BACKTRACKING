@@ -1,0 +1,27 @@
+def is_solution(a, k, target):
+    return sum(a) == target
+
+def process_solution(a):
+    print(a)
+
+def construct_candidates(a, k, target):
+    return [True, False]
+
+def backtrack(a, k, target):
+    if is_solution(a, k, target):
+        process_solution(a)
+    else:
+        k += 1
+        candidates = construct_candidates(a, k, target)
+        for candidate in candidates:
+            a[k] = candidate
+            if sum(a) <= target:
+                backtrack(a, k, target)
+
+def sum_of_subsets(n, target):
+    a = [False] * (n + 1)
+    backtrack(a, 0, target)
+
+n = 3
+target = 15
+sum_of_subsets(n, target)
