@@ -1,0 +1,25 @@
+def container_loader(container_weights, max_weight):
+    container_weights.sort(reverse=True)
+    containers = []
+    current_container = []
+    current_weight = 0
+
+    for weight in container_weights:
+        if weight + current_weight <= max_weight:
+            current_container.append(weight)
+            current_weight += weight
+        else:
+            containers.append(current_container)
+            current_container = [weight]
+            current_weight = weight
+
+    if current_container:
+        containers.append(current_container)
+
+    return containers
+
+# Example Usage
+container_weights = [30, 20, 10, 40, 50, 60, 70]
+max_weight = 100
+result = container_loader(container_weights, max_weight)
+print(result)
